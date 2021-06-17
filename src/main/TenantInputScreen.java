@@ -1,5 +1,5 @@
 package main;
 
-public class TenantInputScreen{
+public class TenantInputScreen extends Tenant{
 
 }
