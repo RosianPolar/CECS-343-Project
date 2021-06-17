@@ -2,7 +2,7 @@ package main;
 
 import java.util.ArrayList;
 
-public class TenantList extends Tenant{
+public class TenantList {
     private ArrayList<Tenant> tenantList;
 
     public void display(){
