@@ -1,9 +1,10 @@
+package main;
+
 import java.util.Scanner;
 
 public class UserInterface{
     public UserInterface(){
-    }
-    public ~UserInterface(){
+
     }
 
     public void interact(){
@@ -14,14 +15,13 @@ public class UserInterface{
                 "3) Display the Expense Record\n" +
                 "4) Display the Annual Summary\n" +
                 "5) Display the Rent Record\n" +
-                "6) Add a new Tenant\n") +
-                "7) Quit";
-
+                "6) Add a new Tenant\n" +
+                "7) Quit\n");
 
         Scanner in = new Scanner(System.in);
         int input = in.nextInt();
 
-        while (input > 0){
+        while (input > -99999){
             switch(input){
                 case 1:
                     break;
