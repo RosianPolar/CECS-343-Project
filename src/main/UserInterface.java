@@ -21,9 +21,12 @@ public class UserInterface{
         Scanner in = new Scanner(System.in);
         int input = in.nextInt();
 
-        while (input > -99999){
+        while (input > -999){
             switch(input){
                 case 1:
+                    System.out.println("Displaying the list of tenants:");
+                    TenantList tl = new TenantList();
+                    tl.display();
                     break;
                 case 2:
                     break;
@@ -44,6 +47,16 @@ public class UserInterface{
                     input = in.nextInt();
                     break;
             }
+            System.out.println(
+                    "Please select an option to continue:\n" +
+                    "1) Display the Tenant List\n" +
+                    "2) Input a rental payment\n" +
+                    "3) Display the Expense Record\n" +
+                    "4) Display the Annual Summary\n" +
+                    "5) Display the Rent Record\n" +
+                    "6) Add a new Tenant\n" +
+                    "7) Quit");
+            input = in.nextInt();
         }
 
     }
