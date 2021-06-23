@@ -29,12 +29,19 @@ public class UserInterface{
                     tl.display();
                     break;
                 case 2:
+
                     break;
                 case 3:
+                    System.out.println("Displaying the Expense Record:");
+                    ExpenseRecord er = new ExpenseRecord();
+                    er.display();
                     break;
                 case 4:
                     break;
                 case 5:
+                    System.out.println("Displaying the Rent Record:");
+                    RentRecord rr = new RentRecord();
+                    rr.display();
                     break;
                 case 6:
                     break;
@@ -44,7 +51,6 @@ public class UserInterface{
                     break;
                 default:
                     System.out.println("Invalid input. Please input a number 1-7");
-                    input = in.nextInt();
                     break;
             }
             System.out.println(
