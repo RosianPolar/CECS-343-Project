@@ -9,9 +9,7 @@ public class TenantInputScreen extends Tenant{
 
 
         public void addTenant() {
-
                 try {
-
                         FileWriter fw = new FileWriter("listOfTenants.txt");
                         Scanner scan = new Scanner(System.in);
                         char control = 'n';
