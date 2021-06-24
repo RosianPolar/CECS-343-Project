@@ -49,6 +49,9 @@ public class UserInterface{
                     rr.display();
                     break;
                 case 6:
+                    System.out.println("Adding a new Tenant");
+                    TenantInputScreen tis = new TenantInputScreen();
+                    tis.addTenant();
                     break;
                 case 7:
                     System.out.println("Thanks for using the Rental management program!");
