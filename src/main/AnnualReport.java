@@ -6,21 +6,41 @@ import java.util.Scanner;
 
 public class AnnualReport{
     public void display(){
-        //todo Calculate all fields in the annual report
-
-
-
+        //todo update annualReport.txt
         try{
-        File myObj = new File("main/annualReport");
-        Scanner scan = new Scanner(myObj);
-        System.out.println(scan.nextLine());
-        System.out.println(scan.nextLine());
+        File expenseFile = new File("main/expenseRecord");
+        Scanner scan = new Scanner(expenseFile);
+        scan.nextLine();
+        scan.nextLine();
 
         while (scan.hasNextLine()) {
             String data = scan.nextLine();
             String[] expense = data.split(",");
+
+
+
+        }
+
+
+
+
+        File annualFile = new File("main/annualReport");
+        scan = new Scanner(annualFile);
+        System.out.println(scan.nextLine());
+        System.out.println(scan.nextLine());
+
+        String data = scan.nextLine();
+        String[] expense = data.split(",");
+        int income = Integer.parseInt(expense[1].replaceAll(" ", ""));
+
+        while (scan.hasNextLine()) {
+            data = scan.nextLine();
+            expense = data.split(",");
             System.out.println(expense[0] + ":" + expense[1]);
         }
+
+        float absoluteTotal = (income + new RentRecord().getSumOfRent() - new ExpenseRecord().displaySummary());
+        System.out.println("\nThe total profit is: " + absoluteTotal);
         System.out.println();
         scan.close();
     } catch (

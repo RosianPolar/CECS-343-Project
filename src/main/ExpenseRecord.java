@@ -17,7 +17,7 @@ public class ExpenseRecord{
                 String[] expense = data.split(",");
                 System.out.println(expense[0] + "," + expense[1] + "," + expense[2] + "," + expense[3]);
             }
-            //displaySummary();
+
             System.out.println();
             scan.close();
         } catch (FileNotFoundException e) {
@@ -40,8 +40,8 @@ public class ExpenseRecord{
                 totalExpenses += Integer.parseInt(expenses[2].replaceAll(" ", ""));
             }
             scan.close();
-            System.out.println("Total expenses: " + totalExpenses);
-            System.out.println();
+            // System.out.println("Total expenses: " + totalExpenses);
+            // System.out.println();
             return Float.parseFloat(String.valueOf(totalExpenses));
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");

@@ -33,8 +33,8 @@ public class RentRecord{
         try {
             File myObj = new File("main/rentRecord");
             Scanner scan = new Scanner(myObj);
-            System.out.println(scan.nextLine());
-            System.out.println(scan.nextLine());
+            scan.nextLine();
+            scan.nextLine();
 
             int totalRent = 0;
             while (scan.hasNextLine()) {
@@ -47,12 +47,12 @@ public class RentRecord{
                 }
 
                 totalRent += yearlyRent;
-                System.out.println("Yearly rent of AptNo: " + rent[0]
-                        + ": " + yearlyRent);
+                // System.out.println("Yearly rent of AptNo: " + rent[0]
+                //        + ": " + yearlyRent);
             }
             scan.close();
-            System.out.println("Total rent: " + totalRent);
-            System.out.println();
+           // System.out.println("Total rent: " + totalRent);
+           // System.out.println();
             return Float.parseFloat(String.valueOf(totalRent));
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
