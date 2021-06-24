@@ -37,6 +37,7 @@ public class UserInterface{
                     System.out.println("Displaying the Expense Record:");
                     ExpenseRecord er = new ExpenseRecord();
                     er.display();
+                    er.displaySummary();
                     break;
                 case 4:
                     System.out.println("Displaying the Annual Report:");
