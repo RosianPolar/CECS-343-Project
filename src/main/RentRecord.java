@@ -20,11 +20,40 @@ public class RentRecord{
                         " " + rent[10] + " " + rent[11] + " " + rent[12]);
             }
             System.out.println();
+
             scan.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             e.printStackTrace();
         }
+    }
+
+    public float getSumOfRent(){
+        try {
+            File myObj = new File("main/rentRecord");
+            Scanner scan = new Scanner(myObj);
+            System.out.println(scan.nextLine());
+            System.out.println(scan.nextLine());
+
+            while (scan.hasNextLine()) {
+                String data = scan.nextLine();
+                String[] rent = data.split(",");
+                int yearlyRent = Integer.parseInt(rent[0]) * -1;
+                for(String s : rent){
+                    yearlyRent += Integer.parseInt(s.replaceAll(" ", ""));
+                }
+                System.out.println("Yearly rent of AptNo: " + rent[0] + ": " + yearlyRent);
+            }
+            System.out.println();
+            scan.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found.");
+            e.printStackTrace();
+        }
+
+
+
+        return 0.0f;
     }
 
 }
