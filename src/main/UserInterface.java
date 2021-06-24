@@ -8,15 +8,17 @@ public class UserInterface{
     }
 
     public void interact(){
-        System.out.print("Welcome to the Rental management program.\n" +
-                "Please select an option to continue:\n" +
-                "1) Display the Tenant List\n" +
-                "2) Input a rental payment\n" +
-                "3) Display the Expense Record\n" +
-                "4) Display the Annual Summary\n" +
-                "5) Display the Rent Record\n" +
-                "6) Add a new Tenant\n" +
-                "7) Quit\n");
+        System.out.print("""
+                Welcome to the Rental management program.
+                Please select an option to continue:
+                1) Display the Tenant List
+                2) Input a rental payment
+                3) Display the Expense Record
+                4) Display the Annual Summary
+                5) Display the Rent Record
+                6) Add a new Tenant
+                7) Quit
+                """);
 
         Scanner in = new Scanner(System.in);
         int input = in.nextInt();
@@ -37,6 +39,9 @@ public class UserInterface{
                     er.display();
                     break;
                 case 4:
+                    System.out.println("Displaying the Annual Report:");
+                    AnnualReport ar = new AnnualReport();
+                    ar.display();
                     break;
                 case 5:
                     System.out.println("Displaying the Rent Record:");
@@ -54,14 +59,15 @@ public class UserInterface{
                     break;
             }
             System.out.println(
-                    "Please select an option to continue:\n" +
-                    "1) Display the Tenant List\n" +
-                    "2) Input a rental payment\n" +
-                    "3) Display the Expense Record\n" +
-                    "4) Display the Annual Summary\n" +
-                    "5) Display the Rent Record\n" +
-                    "6) Add a new Tenant\n" +
-                    "7) Quit");
+                    """
+                            Please select an option to continue:
+                            1) Display the Tenant List
+                            2) Input a rental payment
+                            3) Display the Expense Record
+                            4) Display the Annual Summary
+                            5) Display the Rent Record
+                            6) Add a new Tenant
+                            7) Quit""");
             input = in.nextInt();
         }
 
