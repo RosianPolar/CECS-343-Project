@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FilenotFoundException;
 import java.io.IOException;
 
-public class ExpenseInputScreen extends Expense
+public class ExpenseInputScreen
 
 {
 
