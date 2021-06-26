@@ -30,8 +30,8 @@ public class RentInputScreen extends RentRow{
             array[aptNo][month] = rentPaid;
         try {
             
-            FileWriter rf = new FileWriter("rentRecord.txt");
-            for(int i = 0; i<19;i++)
+            FileWriter rf = new FileWriter("C:\\Users\\Damar\\Documents\\NetBeansProjects\\CECS-343-Project\\CECS-343-Project\\src\\main\\java\\rentRecord.txt");
+            for(int i = 0; i<20;i++)
         {
             for(int j = 0; j<12;j++)
             {
