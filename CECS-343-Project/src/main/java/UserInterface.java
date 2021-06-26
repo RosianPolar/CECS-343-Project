@@ -29,7 +29,7 @@ public class UserInterface{
                     tl.display();
                     break;
                 case 2: 
-                    System.out.println("You may enter your Apartment Number followed by the present month");
+                    
                     RentInputScreen dr = new RentInputScreen();
                     dr.addRent();
                     break;
