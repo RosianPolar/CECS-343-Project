@@ -1,8 +1,10 @@
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.Scanner;
+import java.util.*;
 public class RentInputScreen extends RentRow{
     private int rentPaid; String renterName; int month; int aptNo; 
     private String rent[];
@@ -30,12 +32,12 @@ public class RentInputScreen extends RentRow{
             array[aptNo][month] = rentPaid;
         try {
             
-            FileWriter rf = new FileWriter("C:\\Users\\Damar\\Documents\\NetBeansProjects\\CECS-343-Project\\CECS-343-Project\\src\\main\\java\\rentRecord.txt");
+            PrintWriter rf = new PrintWriter("C:\\Users\\Damar\\Documents\\NetBeansProjects\\CECS-343-Project\\CECS-343-Project\\src\\main\\java\\rentRecord.txt");
             for(int i = 0; i<20;i++)
         {
             for(int j = 0; j<12;j++)
             {
-                rf.write(array[i][j]);
+                rf.print(array[i][j]+","+ "\n");
             
             }
         }rf.close();
