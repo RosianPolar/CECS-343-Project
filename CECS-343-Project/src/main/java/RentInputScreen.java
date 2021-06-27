@@ -12,7 +12,7 @@ public class RentInputScreen extends RentRow{
     public void addRent()
             
     {
-        String[]rent = {"AptNo","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
+        String[]rent = {"AptNo   ","Jan   ","Feb   ","Mar   ","Apr   ","May   ","Jun   ","Jul   ","Aug   ","Sep   ","Oct   ","Nov   ","Dec"};
         int[][]array = new int[20][12];
         for(int i = 0; i<19;i++)
         {
@@ -33,13 +33,17 @@ public class RentInputScreen extends RentRow{
         try {
             
             PrintWriter rf = new PrintWriter("C:\\Users\\Damar\\Documents\\NetBeansProjects\\CECS-343-Project\\CECS-343-Project\\src\\main\\java\\rentRecord.txt");
-            for(int i = 0; i<20;i++)
+            for(int i =0; i < 11;i++)
+            {
+                rf.print(rent[i]);
+            }rf.print("\n");
+            for(int i = 0; i<19;i++)
         {
             for(int j = 0; j<12;j++)
             {
-                rf.print(array[i][j]+","+ "\n");
+                rf.print(array[i][j]+"      ");
             
-            }
+            }rf.print("\n");
         }rf.close();
             
           }
