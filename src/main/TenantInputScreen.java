@@ -5,29 +5,37 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 public class TenantInputScreen extends Tenant{
-        private String newTenantInfo;
+        private String newTenantFName;
+        private float newTenantAptNo;
 
 
         public void addTenant() {
                 try {
                         FileWriter fw = new FileWriter("listOfTenants.txt");
                         Scanner scan = new Scanner(System.in);
-                        char control = 'n';
+                        String control = "";
                         do {
-                                System.out.println("Please enter the Tenant's Full Name and Apt No. as follows: \n"
-                                 + "John Doe, ###");
+                                System.out.println("Please enter the Tenant's Full Name \n");
                                 while(scan.hasNextLine())
                                 {
-                                        newTenantInfo = scan.nextLine();
+                                        newTenantFName = scan.nextLine();
                                 }
-                                        fw.write(newTenantInfo);
+                                System.out.println("Please enter the Tenant's Apartment Number: ");
+                                while(scan.hasNextFloat())
+                                {
+                                        newTenantAptNo = scan.nextFloat();
+                                }
+                                        String currTenantAptNo = String.valueOf(newTenantAptNo);
+                                        fw.write(newTenantFName);
+                                        fw.write(currTenantAptNo);
                                 System.out.println("Would you like to add another Tenant? " +
                                         "\n 'Y/y' or ANY key BUT 'N/n' to add | 'N/n' to quit the Tenant Input Screen");
                                 while(scan.hasNextLine())
                                 {
-                                        control = scan.nextLine().charAt(0);
+                                        control = scan.nextLine();
+                                        control = control.toLowerCase();
                                 }
-                        } while (control!='n' || control!='N');
+                        } while (control!= "n");
                 } catch (FileNotFoundException e) {
                         e.printStackTrace();
                 } catch (IOException e) {
