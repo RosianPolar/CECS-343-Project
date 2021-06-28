@@ -1,15 +1,16 @@
 package main;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.*;
 import java.io.File;
-import java.io.FilenotFoundException;
+//import java.io.FilenotFoundException;
 import java.io.IOException;
 
 public class ExpenseInputScreen extends Expense{
   private double newExpenseInfo;
   
   public void display(){
-    try {
+    /*try {
         FileWriter ex = new FileWriter ("expense.txt");
         Scanner scan = new Scanner (System.in);
         char control = 'n';
@@ -32,8 +33,8 @@ public class ExpenseInputScreen extends Expense{
         } catch (IOException e) {
           e.printStackTrace ();
     }
-  
-  }
+
+  }*/
   
 }
   

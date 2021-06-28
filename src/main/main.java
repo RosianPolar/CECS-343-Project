@@ -6,11 +6,7 @@ public class main{
         System.out.println("Press Any Key To Continue...");
         new java.util.Scanner(System.in).nextLine();
 
-
          UserInterface us = new UserInterface();
          us.interact();
-
-
-
     }
 }
