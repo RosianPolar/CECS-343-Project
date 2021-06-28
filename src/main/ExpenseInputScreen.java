@@ -1,5 +1,6 @@
 package main;
-import java.util.Scanner.*;
+import java.util.Scanner;
+import java.util.*;
 import java.io.File;
 import java.io.FilenotFoundException;
 import java.io.IOException;
