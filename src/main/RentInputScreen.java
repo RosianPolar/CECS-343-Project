@@ -29,7 +29,7 @@ public class RentInputScreen extends RentRow{
             System.out.println("Enter the apt #: ");
             aptNo = scanny.nextInt();
             System.out.println("enter rent paid: ");
-            rentPaid = scanny.nextInt();
+            rentPaid = scanny.nextFloat();
             temp[0] = aptNo;
             rent[month-1] = rentPaid;
            
