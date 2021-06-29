@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class RentRecord{
     public void display(){
-        System.out.println("apt\t"+"Jan\t"+"Feb\t"+"Mar\t"+"Apr\t"+"May\t"+"Jun\t"+"Jul\t"+"Aug\t"+"Sep\t"+"Oct\t"+"Nov\t"+"Dec\t");
+        
         try {
             File myObj = new File("main/rentRecord");
             Scanner scan = new Scanner(myObj);
@@ -35,7 +35,7 @@ public class RentRecord{
     public float getSumOfRent(){
         float total = 0;
         try {
-            Scanner read = new Scanner(new BufferedReader(new FileReader("C:\\Users\\Damar\\Documents\\NetBeansProjects\\CECS-343-Project\\CECS-343-Project\\src\\main\\java\\rentRecord.txt")));
+            Scanner read = new Scanner(new BufferedReader(new FileReader("main/rentRecord")));
             while(read.hasNext())
             {
                 if(read.hasNextFloat())
@@ -47,7 +47,7 @@ public class RentRecord{
             }
                 
             read.close();
-            System.out.println("yearly renttotal:$ " + total+"\n");
+            System.out.println("yearly rent total: $" + total+"\n");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             e.printStackTrace();
