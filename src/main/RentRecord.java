@@ -10,7 +10,7 @@ public class RentRecord{
     public void display(){
         System.out.println("apt\t"+"Jan\t"+"Feb\t"+"Mar\t"+"Apr\t"+"May\t"+"Jun\t"+"Jul\t"+"Aug\t"+"Sep\t"+"Oct\t"+"Nov\t"+"Dec\t");
         try {
-            File myObj = new File("C:\\Users\\Damar\\Documents\\NetBeansProjects\\CECS-343-Project\\CECS-343-Project\\src\\main\\java\\rentRecord.txt");
+            File myObj = new File("main/rentRecord");
             Scanner scan = new Scanner(myObj);
             System.out.println(scan.nextLine());
             System.out.println(scan.nextLine());
