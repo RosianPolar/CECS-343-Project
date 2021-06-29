@@ -24,32 +24,22 @@ public class ExpenseInputScreen extends Expense{
         String newExpenseInfo;
         do {
             System.out.println ("Please enter the month for this expense: e.g. 3 for March");
-            while (scan.hasNextFloat())
-            {
-                dateMonth = scan.nextFloat();
-            }
-            System.out.println ("Please enter the day for this expense: e.g. 16 for 16th of a given month");
-            while (scan.hasNextFloat())
-            {
-                dateDay = scan.nextFloat();
-                scan.nextLine();
-            }
+
+            dateMonth = scan.nextFloat();
+
             System.out.println ("Please enter name of the payee for this transaction");
-            while (scan.hasNextLine())
-            {
-                payee = scan.nextLine();
-            }
+
+            payee = scan.nextLine();
+
             System.out.println ("Please enter the expense amount in number: ");
-            while (scan.hasNextFloat())
-            {
+
              amount = scan.nextFloat();
              scan.nextLine();
-            }
+
             System.out.println ("Please enter name of the category for this transaction");
-            while (scan.hasNextLine())
-            {
-                category = scan.nextLine();
-            }
+
+            category = scan.nextLine();
+
 
             newExpenseInfo = dateMonth + "/" + dateDay + ", " + payee + ", " + amount + ", " + category;
             ex.write(newExpenseInfo);
