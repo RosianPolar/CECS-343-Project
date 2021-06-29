@@ -32,6 +32,7 @@ public class ExpenseInputScreen extends Expense{
             while (scan.hasNextFloat())
             {
                 dateDay = scan.nextFloat();
+                scan.nextLine();
             }
             System.out.println ("Please enter name of the payee for this transaction");
             while (scan.hasNextLine())
@@ -42,6 +43,7 @@ public class ExpenseInputScreen extends Expense{
             while (scan.hasNextFloat())
             {
              amount = scan.nextFloat();
+             scan.nextLine();
             }
             System.out.println ("Please enter name of the category for this transaction");
             while (scan.hasNextLine())
