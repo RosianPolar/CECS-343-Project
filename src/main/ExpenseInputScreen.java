@@ -21,7 +21,7 @@ public class ExpenseInputScreen extends Expense{
         do {
             System.out.println ("Please enter the month for this expense: e.g. 3 for March");
 
-            Float dateMonth = scan.nextFloat();
+            float dateMonth = scan.nextFloat();
 
             System.out.println("Please enter the day for this expense: e.g. 17 for the 17th of a given month");
 
@@ -52,7 +52,7 @@ public class ExpenseInputScreen extends Expense{
                 control = control.toLowerCase().substring(0,1);
             }
 
-           } while (!control.equals("n"));
+           } while (!control.equals("n")); ex.close();
         } catch (FileNotFoundException e){
           e.printStackTrace ();    
         }
