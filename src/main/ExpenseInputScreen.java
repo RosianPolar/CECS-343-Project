@@ -5,12 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class ExpenseInputScreen extends Expense{
-  private Float dateMonth;
-  private Float dateDay;
-  private String payee;
-  private Float amount;
-  private String category;
-  //get date, payee, amount, category
+
+    //get date, payee, amount, category
   /* Date    Payee       Amount      Category
 ------------------------------------------
       1/2,    City Water, 978,       Utilities
@@ -25,20 +21,25 @@ public class ExpenseInputScreen extends Expense{
         do {
             System.out.println ("Please enter the month for this expense: e.g. 3 for March");
 
-            dateMonth = scan.nextFloat();
+            Float dateMonth = scan.nextFloat();
+
+            System.out.println("Please enter the day for this expense: e.g. 17 for the 17th of a given month");
+
+            float dateDay = scan.nextFloat();
+            scan.nextLine();
 
             System.out.println ("Please enter name of the payee for this transaction");
 
-            payee = scan.nextLine();
+            String payee = scan.nextLine();
 
             System.out.println ("Please enter the expense amount in number: ");
 
-             amount = scan.nextFloat();
+            float amount = scan.nextFloat();
              scan.nextLine();
 
             System.out.println ("Please enter name of the category for this transaction");
 
-            category = scan.nextLine();
+            String category = scan.nextLine();
 
 
             newExpenseInfo = dateMonth + "/" + dateDay + ", " + payee + ", " + amount + ", " + category;
