@@ -16,7 +16,7 @@ public class ExpenseInputScreen extends Expense{
     {
         FileWriter ex = new FileWriter ("expense.txt");
         Scanner scan = new Scanner (System.in);
-        String control = "";
+        String control;
         String newExpenseInfo;
         do {
             System.out.println ("Please enter the month for this expense: e.g. 3 for March");
@@ -46,11 +46,10 @@ public class ExpenseInputScreen extends Expense{
             ex.write(newExpenseInfo);
             System.out.println ("Would you like to add more expenses? " + 
                                 "\n 'Y/y' or for Yes and 'N/n' to leave the Expense Input Screen");
-            while (scan.hasNextLine ())
-            {
+
                 control = scan.nextLine();
                 control = control.toLowerCase().substring(0,1);
-            }
+
 
            } while (!control.equals("n")); ex.close();
         } catch (FileNotFoundException e){
