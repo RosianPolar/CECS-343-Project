@@ -51,7 +51,8 @@ public class ExpenseInputScreen extends Expense{
                 control = control.toLowerCase().substring(0,1);
 
 
-           } while (!control.equals("n")); ex.close();
+           } while (!control.equals("n"));
+        ex.close();
         } catch (FileNotFoundException e){
           e.printStackTrace ();    
         }
