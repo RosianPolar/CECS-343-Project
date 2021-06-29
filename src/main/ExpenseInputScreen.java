@@ -7,7 +7,6 @@ import java.io.IOException;
 public class ExpenseInputScreen extends Expense{
   private Float dateMonth;
   private Float dateDay;
-  private String newExpenseInfo;
   private String payee;
   private Float amount;
   private String category;
@@ -17,10 +16,12 @@ public class ExpenseInputScreen extends Expense{
       1/2,    City Water, 978,       Utilities
       2/15,   All State,  4840,      Insurance*/
   public void display() throws IOException {
-    try {
+    try
+    {
         FileWriter ex = new FileWriter ("expense.txt");
         Scanner scan = new Scanner (System.in);
         String control = "";
+        String newExpenseInfo;
         do {
             System.out.println ("Please enter the month for this expense: e.g. 3 for March");
             while (scan.hasNextFloat())
@@ -52,10 +53,12 @@ public class ExpenseInputScreen extends Expense{
             ex.write(newExpenseInfo);
             System.out.println ("Would you like to add more expenses? " + 
                                 "\n 'Y/y' or for Yes and 'N/n' to leave the Expense Input Screen");
-              while (scan.hasNextLine ())
-              {
+            while (scan.hasNextLine ())
+            {
                 control = scan.nextLine();
-              }
+                control = control.toLowerCase().substring(0,1);
+            }
+
            } while (!control.equals("n"));
         } catch (FileNotFoundException e){
           e.printStackTrace ();    

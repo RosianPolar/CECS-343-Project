@@ -1,5 +1,5 @@
 package main;
-import java.io.File;
+
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,7 +9,7 @@ public class TenantInputScreen extends Tenant{
         private float newTenantAptNo;
 
 
-        public void addTenant() {
+        public void addTenant() throws IOException {
                 try {
                         FileWriter fw = new FileWriter("listOfTenants.txt");
                         Scanner scan = new Scanner(System.in);
@@ -33,12 +33,10 @@ public class TenantInputScreen extends Tenant{
                                 while(scan.hasNextLine())
                                 {
                                         control = scan.nextLine();
-                                        control = control.toLowerCase();
+                                        control = control.toLowerCase().substring(0,1);
                                 }
-                        } while (control!= "n");
+                        } while (!control.equals("n"));
                 } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                } catch (IOException e) {
                         e.printStackTrace();
                 }
         }
