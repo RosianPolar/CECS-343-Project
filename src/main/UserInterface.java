@@ -1,5 +1,6 @@
 package main;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class UserInterface{
@@ -7,7 +8,7 @@ public class UserInterface{
 
     }
 
-    public void interact(){
+    public void interact() throws IOException {
         System.out.print("""
                 Welcome to the Rental management program.
                 Please select an option to continue:
