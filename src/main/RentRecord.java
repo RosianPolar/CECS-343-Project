@@ -1,26 +1,24 @@
 package main;
-
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class RentRecord{
     public void display(){
-        
         try {
             File myObj = new File("main/rentRecord");
             Scanner scan = new Scanner(myObj);
             System.out.println(scan.nextLine());
             System.out.println(scan.nextLine());
-            
+
             while (scan.hasNextLine()) {
                 String data = scan.nextLine();
+                
                 String[] rent = data.split(",");
-                System.out.println(data);
-                
-                
+                System.out.println(rent[0]+ " " + rent[1] + " " + rent[2] + " " + rent[3] +  " " +
+                        rent[4] + " " + rent[5] + " " + rent[6] + " " + rent[7] + " " + rent[8] + " " + rent[9] +
+                        " " + rent[10] + " " + rent[11] + " " + rent[12]);
             }
             System.out.println();
             getSumOfRent();
@@ -33,21 +31,33 @@ public class RentRecord{
     }
 
     public float getSumOfRent(){
-        float total = 0;
         try {
-            Scanner read = new Scanner(new BufferedReader(new FileReader("main/rentRecord")));
-            while(read.hasNext())
-            {
-                if(read.hasNextFloat())
-                {
-                    total += read.nextFloat();
+            File myObj = new File("main/rentRecord");
+            Scanner scan = new Scanner(myObj);
+            scan.nextLine();
+            scan.nextLine();
+
+            int totalRent = 0;
+            while (scan.hasNextLine()) {
+               String data =scan.nextLine();
+               String[]rent = data.split(",");
+                Float[] floats = Arrays.stream(rent).map(Float::valueOf).toArray(Float[]::new);
+                 //int yearlyRent = Integer.parseInt(rent[0]) * -1;
+//               for(String s : rent){
+//                 yearlyRent += Integer.parseInt(s.replaceAll(" ", ""));
+//                }
+//
+//                totalRent += yearlyRent;
+                for(int i=1; i<13; i++){
+                    totalRent += floats[i];
                 }
-                else
-                    read.next();   
+                    
+                 System.out.println("Yearly rent of Apts: " + ": " + totalRent);
             }
-                
-            read.close();
-            System.out.println("yearly rent total: $" + total+"\n");
+            scan.close();
+           // System.out.println("Total rent: " + totalRent);
+           // System.out.println();
+            return Float.parseFloat(String.valueOf(totalRent));
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
             e.printStackTrace();
@@ -55,5 +65,7 @@ public class RentRecord{
 
         return 0.0f;
     }
+
+}
 
 }
