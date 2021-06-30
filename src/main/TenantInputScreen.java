@@ -1,36 +1,47 @@
 package main;
-import java.io.File;
+
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 public class TenantInputScreen extends Tenant{
-        private String newTenantInfo;
+        private String newTenantFName;
+        private int newTenantAptNo;
 
 
-        public void addTenant() {
+        public void addTenant() throws IOException {
                 try {
-                        FileWriter fw = new FileWriter("listOfTenants.txt");
+                       
+                        PrintWriter rf = new PrintWriter (new FileWriter("main/listOfTenants", true));
                         Scanner scan = new Scanner(System.in);
-                        char control = 'n';
+                        String control = "";
                         do {
-                                System.out.println("Please enter the Tenant's Full Name and Apt No. as follows: \n"
-                                 + "John Doe, ###");
-                                while(scan.hasNextLine())
-                                {
-                                        newTenantInfo = scan.nextLine();
-                                }
-                                        fw.write(newTenantInfo);
-                                System.out.println("Would you like to add another Tenant? " +
+                                System.out.println("Please enter the Tenant's Full Name \n");
+                                
+                                
+                                        newTenantFName = scan.nextLine();
+                                
+                                        System.out.println("Please enter the Tenant's Apartment Number: ");
+                                
+                                
+                                        newTenantAptNo = scan.nextInt();
+                                
+                                        String currTenantAptNo = Integer.toString(newTenantAptNo);
+                                        rf.write(currTenantAptNo);
+                                        rf.write("\t");
+                                        rf.write(newTenantFName);
+                                        rf.write("\n");
+                                        
+                                        System.out.println("Would you like to add another Tenant? " +
                                         "\n 'Y/y' or ANY key BUT 'N/n' to add | 'N/n' to quit the Tenant Input Screen");
-                                while(scan.hasNextLine())
-                                {
-                                        control = scan.nextLine().charAt(0);
-                                }
-                        } while (control!='n' || control!='N');
+                                
+                                        scan.nextLine();
+                                        control = scan.nextLine();
+                                        control = control.toLowerCase().substring(0,1);
+                                
+                        } while (!control.equals("n")); rf.close();
                 } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                } catch (IOException e) {
                         e.printStackTrace();
                 }
         }

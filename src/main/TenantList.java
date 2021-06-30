@@ -5,7 +5,8 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class TenantList {
-
+    //todo compare TenantList code to activity 3 Conceptual Class Diag.
+    //todo add/remove missing methods insertTenant() & getAptNumber()
     public void display(){
         //Retrieving all Tenants Stored.
         try {

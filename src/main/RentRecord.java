@@ -1,7 +1,7 @@
 package main;
-
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class RentRecord{
@@ -14,8 +14,9 @@ public class RentRecord{
 
             while (scan.hasNextLine()) {
                 String data = scan.nextLine();
+                
                 String[] rent = data.split(",");
-                System.out.println(rent[0] + " " + rent[1] + " " + rent[2] + " " + rent[3] +  " " +
+                System.out.println(rent[0]+ " " + rent[1] + " " + rent[2] + " " + rent[3] +  " " +
                         rent[4] + " " + rent[5] + " " + rent[6] + " " + rent[7] + " " + rent[8] + " " + rent[9] +
                         " " + rent[10] + " " + rent[11] + " " + rent[12]);
             }
@@ -38,17 +39,20 @@ public class RentRecord{
 
             int totalRent = 0;
             while (scan.hasNextLine()) {
-                String data = scan.nextLine();
-                String[] rent = data.split(",");
-
-                int yearlyRent = Integer.parseInt(rent[0]) * -1;
-                for(String s : rent){
-                    yearlyRent += Integer.parseInt(s.replaceAll(" ", ""));
+               String data =scan.nextLine();
+               String[]rent = data.split(",");
+                Float[] floats = Arrays.stream(rent).map(Float::valueOf).toArray(Float[]::new);
+                 //int yearlyRent = Integer.parseInt(rent[0]) * -1;
+//               for(String s : rent){
+//                 yearlyRent += Integer.parseInt(s.replaceAll(" ", ""));
+//                }
+//
+//                totalRent += yearlyRent;
+                for(int i=1; i<13; i++){
+                    totalRent += floats[i];
                 }
-
-                totalRent += yearlyRent;
-                // System.out.println("Yearly rent of AptNo: " + rent[0]
-                //        + ": " + yearlyRent);
+                    
+                 System.out.println("Yearly rent of Apts: " + ": " + totalRent);
             }
             scan.close();
            // System.out.println("Total rent: " + totalRent);
@@ -61,5 +65,7 @@ public class RentRecord{
 
         return 0.0f;
     }
+
+}
 
 }
