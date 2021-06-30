@@ -39,8 +39,8 @@ public class RentRecord{
 
             int totalRent = 0;
             while (scan.hasNextLine()) {
-               String data =scan.nextLine();
-               String[]rent = data.split(",");
+               String data = scan.nextLine();
+               String[]rent = data.replaceAll(" ", "").split(",");
                 Float[] floats = Arrays.stream(rent).map(Float::valueOf).toArray(Float[]::new);
                  //int yearlyRent = Integer.parseInt(rent[0]) * -1;
 //               for(String s : rent){

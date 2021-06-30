@@ -37,7 +37,7 @@ public class ExpenseRecord{
             while (scan.hasNextLine()) {
                 String data = scan.nextLine();
                 String[] expenses = data.split(",");
-                totalExpenses += Integer.parseInt(expenses[2].replaceAll(" ", ""));
+                totalExpenses += Float.parseFloat(expenses[2].replaceAll(" ", ""));
             }
             scan.close();
             // System.out.println("Total expenses: " + totalExpenses);

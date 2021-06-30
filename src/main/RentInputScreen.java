@@ -37,18 +37,18 @@ public class RentInputScreen extends RentRow{
             String dis = "";
 
             PrintWriter rf = new PrintWriter (new FileWriter("main/rentRecord", true));
-            dis += temp + ",";
+            dis += temp + ",\t\t";
             //rf.print("\n" + temp);
             //rf.print(",\t");
 
 
             for(int j = 0; j<12;j++)
             {
-                dis += rent[j] + ",";
+                dis += rent[j] + ",\t";
                 //rf.print(rent[j]);
                // rf.print(",\t");
             }
-            dis = dis.substring(0,dis.length()-1);
+            dis = dis.substring(0,dis.length()-2);
             rf.print(dis);
             rf.print("\n");
             rf.close();
