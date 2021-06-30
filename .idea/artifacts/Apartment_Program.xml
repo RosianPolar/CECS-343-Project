@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Apartment Program">
+    <output-path>$PROJECT_DIR$/out/artifacts/Apartment_Program</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="main.main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="Apartment Program" />
+        <option name="vendor" value="" />
+        <option name="version" value="1.0" />
+      </options>
+    </properties>
+    <root id="root" />
+  </artifact>
+</component>

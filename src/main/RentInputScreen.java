@@ -17,7 +17,7 @@ public class RentInputScreen extends RentRow{
             
     {
         float[]rent = new float[13];
-        int temp[] = new int[100000000];
+        int temp = 0;
             for(int j = 0; j<12;j++)
             {
                 rent[j] = 0;  
@@ -30,20 +30,27 @@ public class RentInputScreen extends RentRow{
             aptNo = scanny.nextInt();
             System.out.println("enter rent paid: ");
             rentPaid = scanny.nextFloat();
-            temp[0] = aptNo;
+            temp = aptNo;
             rent[month-1] = rentPaid;
            
         try {
+            String dis = "";
 
             PrintWriter rf = new PrintWriter (new FileWriter("main/rentRecord", true));
-            rf.print(temp[0]);
-            rf.print("\t");
-            
+            dis += temp + ",";
+            //rf.print("\n" + temp);
+            //rf.print(",\t");
+
+
             for(int j = 0; j<12;j++)
             {
-                rf.print(rent[j]);
-                rf.print("\t");
-            }rf.print("\n");
+                dis += rent[j] + ",";
+                //rf.print(rent[j]);
+               // rf.print(",\t");
+            }
+            dis = dis.substring(0,dis.length()-1);
+            rf.print(dis);
+            rf.print("\n");
             rf.close();
           }
         catch (IOException e) {

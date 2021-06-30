@@ -52,8 +52,9 @@ public class RentRecord{
                     totalRent += floats[i];
                 }
                     
-                 System.out.println("Yearly rent of Apts: " + ": " + totalRent);
+
             }
+            System.out.println("Yearly rent of Apts: " + ": " + totalRent);
             scan.close();
            // System.out.println("Total rent: " + totalRent);
            // System.out.println();
